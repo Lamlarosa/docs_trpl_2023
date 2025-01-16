@@ -1,0 +1,144 @@
+---
+title: Analisis Kebutuhan
+description: Aplikasi inventory adalah sistem yang dirancang untuk membantu perusahaan atau individu mengelola stok barang mereka. Aplikasi inventory dibuat untuk mengelola stok barang secara efisien, mengurangi kesalahan manual, dan memantau persediaan secara real-time. Dengan otomatisasi pencatatan, aplikasi ini membantu meningkatkan efisiensi operasional, menghemat waktu dan biaya, serta memastikan ketersediaan barang yang dibutuhkan. Selain itu, aplikasi ini mendukung pengambilan keputusan yang lebih cepat dan akurat, sehingga dapat meningkatkan kepuasan pelanggan serta mengurangi pemborosan dan biaya penyimpanan.
+keywords: ["introduction", "guide", "nextjs", "documents"]
+---
+
+## Business Requirement
+
+1. Tujuan Bisnis  
+   Aplikasi ini bertujuan untuk meningkatkan efisiensi operasional dengan menyediakan solusi terintegrasi untuk pengelolaan stok barang, pemantauan ketersediaan barang, dan pengelolaan data inventaris secara real-time.
+
+2. Manfaat Bisnis
+   - Meningkatkan akurasi pencatatan stok barang.  
+   - Meminimalkan risiko kehabisan stok atau overstock.  
+   - Mempercepat proses pelaporan dan analisis data inventaris.  
+   - Mengurangi biaya operasional terkait pengelolaan persediaan.  
+   - Mempermudah koordinasi antarbagian terkait inventaris.  
+
+3. Fitur Utama yang Dibutuhkan
+   - Pencatatan Barang Masuk dan Keluar: Memungkinkan pengguna mencatat semua transaksi barang secara rinci.  
+   - Pemantauan Stok Real-Time: Menampilkan ketersediaan barang terkini untuk mencegah kehabisan stok.  
+   - Pencarian Barang: Fitur pencarian cepat berdasarkan nama atau deskripsi barang.  
+   - Pemberitahuan Stok Rendah: Memberikan peringatan otomatis jika stok barang mendekati batas minimum.
+
+4. Pihak Terkait
+   Pemilik Usaha
+      -Memantau dan menganalisis data stok untuk pengambilan keputusan strategis.  
+      -Mencatat dan memproses transaksi barang masuk dan keluar.  
+      -Melihat laporan inventaris untuk menghitung biaya dan nilai barang.  
+
+5. Kriteria Keberhasilan  
+   - Sistem dapat mencatat dan menampilkan data stok dengan akurasi 99%.  
+   - Proses pencarian barang dapat dilakukan dalam waktu kurang dari 2 detik.  
+   - Pemberitahuan stok rendah dikirim secara otomatis tanpa keterlambatan.  
+   - Laporan dapat diunduh dan dicetak dalam berbagai format (PDF, Excel).  
+
+Aplikasi ini dirancang agar fleksibel, mudah digunakan, dan dapat disesuaikan dengan kebutuhan bisnis yang berkembang.
+
+## Stakeholder Requirement
+
+1. **Manajer Operasional**  
+   - Memiliki akses ke laporan lengkap tentang stok barang, barang masuk, barang keluar, dan barang yang hampir habis.  
+   - Mendapatkan pemberitahuan otomatis tentang stok rendah atau kelebihan stok.  
+   - Dapat mengakses sistem kapan saja untuk pemantauan inventaris secara real-time.  
+   - Mampu mengekspor laporan dalam format standar (PDF, Excel).  
+
+2. **Staf Gudang**  
+   - Antarmuka yang mudah digunakan untuk mencatat barang masuk dan keluar dengan cepat.  
+   - Dapat memindai kode barang untuk pencatatan yang lebih cepat dan akurat (opsional).  
+   - Mendapatkan notifikasi atau daftar barang yang memerlukan perhatian khusus, seperti stok rendah.  
+
+3. **Bagian Keuangan**  
+   - Memiliki akses ke data yang diperlukan untuk menghitung nilai barang dan biaya operasional.  
+   - Mampu melihat dan memvalidasi transaksi barang masuk dan keluar yang telah dicatat.  
+   - Dapat mengunduh laporan stok yang terperinci sesuai periode tertentu untuk kebutuhan audit.  
+
+4. **Pelanggan (Jika Ada Interaksi)**  
+   - Mendapatkan informasi tentang ketersediaan barang yang dipesan atau dibutuhkan (jika relevan).  
+   - Memastikan keakuratan data barang saat berinteraksi dengan pihak perusahaan.  
+
+5. **Administrator Sistem**  
+   - Dapat menambahkan, mengedit, atau menghapus data pengguna (staf gudang, manajer, keuangan).  
+   - Mengelola dan memelihara database agar selalu terintegrasi dengan baik.  
+   - Mampu mengatur parameter sistem seperti jumlah stok minimum untuk pemberitahuan.  
+   - Mengawasi dan memastikan kelancaran operasional sistem inventaris.  
+
+6. **Pemilik Bisnis**  
+   - Memiliki akses ke semua laporan penting untuk menganalisis kinerja inventaris.  
+   - Dapat memantau tren stok untuk mendukung pengambilan keputusan strategis.  
+   - Memastikan bahwa sistem berjalan sesuai kebutuhan dan memberikan ROI yang sesuai.  
+
+**Kriteria Utama:**  
+- Semua stakeholder harus dapat mengakses fitur sesuai kebutuhan mereka dengan antarmuka yang intuitif.  
+- Sistem harus memberikan informasi yang akurat dan dapat diandalkan untuk mendukung operasional harian dan keputusan strategis.                                                   |
+
+## System Requirement
+
+*1. Functional Requirements (Fungsi Utama yang Harus Dimiliki Sistem)**  
+  **Pengelolaan Data Stok**  
+- Sistem harus memungkinkan penambahan, pengeditan, dan penghapusan data barang.  
+- Sistem harus mencatat informasi barang seperti nama barang, deskripsi, jumlah stok, dan lokasi penyimpanan.  
+- Sistem harus mendukung pencarian dan penyortiran data barang berdasarkan kategori tertentu.  
+
+  **Pencatatan Barang Masuk dan Keluar**  
+- Sistem harus mencatat transaksi barang masuk (supplier) dan barang keluar (customer atau departemen lain).  
+- Sistem harus mendukung penginputan manual.
+
+  **Monitoring dan Notifikasi**  
+- Sistem harus memberikan notifikasi untuk barang dengan stok rendah.  
+- Sistem harus menampilkan peringatan barang yang telah habis.  
+
+  **Pembuatan Laporan** 
+- Laporan harus tersedia dalam format PDF, Excel.  
+- Sistem harus memungkinkan pengelompokan laporan berdasarkan kategori barang dan periode waktu.  
+
+  **Manajemen Pengguna**  
+- Sistem harus memiliki mekanisme autentikasi login dan pengamanan akses data berdasarkan hak pengguna.  
+
+**2. Non-Functional Requirements (Kebutuhan Teknis dan Operasional)**  
+  **Kinerja**  
+- Sistem harus mampu memproses dan menampilkan data stok kurang dari 2 detik.  
+- Sistem harus dapat menangani hingga 10.000 transaksi per bulan tanpa penurunan kinerja.  
+
+  **Keamanan**
+- Sistem harus menyimpan data login secara hashed menggunakan algoritma keamanan.  
+- Hanya pengguna yang terautentikasi yang dapat mengakses data atau melakukan perubahan.  
+
+  **Ketersediaan**
+- Sistem harus dapat diakses melalui web browser pada perangkat desktop dan mobile.  
+
+  **Skalabilitas**  
+- Sistem harus dirancang agar dapat menangani peningkatan jumlah data barang atau transaksi tanpa memerlukan perubahan besar.  
+- Sistem harus mendukung integrasi dengan perangkat barcode scanner atau RFID jika diperlukan di masa depan.  
+
+  **Kompatibilitas**  
+- Sistem harus mendukung browser modern seperti Google Chrome, Mozilla Firefox, dan Microsoft Edge.  
+
+  **Antarmuka Pengguna (UI/UX)**  
+- Sistem harus memiliki antarmuka yang intuitif dan responsif, dapat menyesuaikan dengan layar desktop dan perangkat mobile.
+
+**3. Constraints**  
+- Sistem harus diselesaikan dalam waktu 3 bulan.
+
+
+
+## Software Requirement
+
+**1. Functional Requirements**
+- **Manajemen Data Barang**: Tambah, edit, hapus, dan cari barang.
+- **Transaksi Barang**: Pencatatan barang masuk dan keluar.
+- **Monitoring Stok**: Notifikasi untuk stok rendah dan barang yang jarang bergerak.
+- **Laporan**: Pembuatan laporan stok harian, mingguan, dan bulanan dalam format PDF/Excel.
+- **Manajemen Pengguna**: Autentikasi login dan peran pengguna (admin, staf).
+
+**2. Non-Functional Requirements**
+- **Kinerja**: Respon cepat (<2 detik) untuk pencarian dan transaksi.
+- **Keamanan**: Enkripsi data, autentikasi aman, dan perlindungan akses.
+- **Responsivitas**: Kompatibel dengan desktop dan perangkat mobile.
+- **Kompatibilitas**: Mendukung browser modern (Chrome, Firefox, Edge).
+
+**3. Teknologi Pendukung**
+- **Database**: MySQL atau PostgreSQL.
+- **Frontend**: HTML, CSS, JavaScript (Bootstrap).
+- **Server**: Linux/Windows dengan minimal PHP 7.4 atau Node.js 14 ke atas.
