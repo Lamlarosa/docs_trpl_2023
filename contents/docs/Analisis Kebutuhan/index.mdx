@@ -1,0 +1,163 @@
+---
+title: Analisis Kebutuhan
+description: Aplikasi inventory adalah sistem yang dirancang untuk membantu perusahaan atau individu mengelola stok barang mereka.
+keywords: ["introduction", "guide", "nextjs", "documents"]
+---
+
+![Banner](/images/dash.png "Documents")
+
+## Business Requirement
+
+1. Tujuan Bisnis  
+   Aplikasi ini bertujuan untuk meningkatkan efisiensi operasional dengan menyediakan solusi terintegrasi untuk pengelolaan stok barang, pemantauan ketersediaan barang, dan pengelolaan data inventaris secara real-time.
+
+2. Manfaat Bisnis  
+   - Meningkatkan akurasi pencatatan stok barang.  
+   - Meminimalkan risiko kehabisan stok atau overstock.  
+   - Mempercepat proses pelaporan dan analisis data inventaris.  
+   - Mengurangi biaya operasional terkait pengelolaan persediaan.  
+   - Mempermudah koordinasi antarbagian terkait inventaris.  
+
+3. Fitur Utama yang Dibutuhkan  
+   - Pencatatan Barang Masuk dan Keluar: Memungkinkan pengguna mencatat semua transaksi barang secara rinci.  
+   - Pemantauan Stok Real-Time: Menampilkan ketersediaan barang terkini untuk mencegah kehabisan stok.  
+   - Pencarian Barang: Fitur pencarian cepat berdasarkan nama atau deskripsi barang.  
+   - Pemberitahuan Stok Rendah: Memberikan peringatan otomatis jika stok barang mendekati batas minimum.  
+   - Laporan Inventaris: Menghasilkan laporan stok harian, bulanan, atau berdasarkan kebutuhan.  
+   - Manajemen Pengguna: Mengatur akses pengguna berdasarkan peran atau otoritas.  
+
+4. Pihak Terkait  
+   - Pemilik Usaha
+      -Memantau dan menganalisis data stok untuk pengambilan keputusan strategis.  
+      -Mencatat dan memproses transaksi barang masuk dan keluar.  
+      -Menggunakan laporan inventaris untuk menghitung biaya dan nilai barang.  
+
+5. Kriteria Keberhasilan  
+   - Sistem dapat mencatat dan menampilkan data stok dengan akurasi 99%.  
+   - Proses pencarian barang dapat dilakukan dalam waktu kurang dari 2 detik.  
+   - Pemberitahuan stok rendah dikirim secara otomatis tanpa keterlambatan.  
+   - Laporan dapat diunduh dan dicetak dalam berbagai format (PDF, Excel).  
+
+
+## Stakeholder Requirement
+
+1. Manajer Operasional  
+   - Memiliki akses ke laporan lengkap tentang stok barang, barang masuk, barang keluar, dan barang yang hampir habis.  
+   - Mendapatkan pemberitahuan otomatis tentang stok rendah atau kelebihan stok.  
+   - Dapat mengakses sistem kapan saja untuk pemantauan inventaris secara real-time.  
+   - Mampu mengekspor laporan dalam format standar (PDF, Excel).  
+
+2. Staf Gudang  
+   - Antarmuka yang mudah digunakan untuk mencatat barang masuk dan keluar dengan cepat.  
+   - Dapat memindai kode barang untuk pencatatan yang lebih cepat dan akurat (opsional).  
+   - Mendapatkan notifikasi atau daftar barang yang memerlukan perhatian khusus, seperti stok rendah.  
+
+3. Bagian Keuangan  
+   - Memiliki akses ke data yang diperlukan untuk menghitung nilai barang dan biaya operasional.  
+   - Mampu melihat dan memvalidasi transaksi barang masuk dan keluar yang telah dicatat.  
+   - Dapat mengunduh laporan stok yang terperinci sesuai periode tertentu untuk kebutuhan audit.  
+
+4. Pelanggan (Jika Ada Interaksi)  
+   - Mendapatkan informasi tentang ketersediaan barang yang dipesan atau dibutuhkan (jika relevan).  
+   - Memastikan keakuratan data barang saat berinteraksi dengan pihak perusahaan.  
+
+5. Administrator Sistem  
+   - Dapat menambahkan, mengedit, atau menghapus data pengguna (staf gudang, manajer, keuangan).  
+   - Mengelola dan memelihara database agar selalu terintegrasi dengan baik.  
+   - Mampu mengatur parameter sistem seperti jumlah stok minimum untuk pemberitahuan.  
+   - Mengawasi dan memastikan kelancaran operasional sistem inventaris.  
+
+6. Pemilik Bisnis  
+   - Memiliki akses ke semua laporan penting untuk menganalisis kinerja inventaris.  
+   - Dapat memantau tren stok untuk mendukung pengambilan keputusan strategis.  
+   - Memastikan bahwa sistem berjalan sesuai kebutuhan dan memberikan ROI yang sesuai.  
+
+**Kriteria Utama:**  
+- Semua stakeholder harus dapat mengakses fitur sesuai kebutuhan mereka dengan antarmuka yang intuitif.  
+- Sistem harus memberikan informasi yang akurat dan dapat diandalkan untuk mendukung operasional harian dan keputusan strategis.
+
+## System Requirement
+
+ **1. Functional Requirements (Fungsi Utama yang Harus Dimiliki Sistem)**  
+**Pengelolaan Data Stok**  
+- Sistem harus memungkinkan penambahan, pengeditan, dan penghapusan data barang.  
+- Sistem harus mencatat informasi barang seperti nama barang, deskripsi, dan jumlah stok.  
+- Sistem harus mendukung pencarian dan penyortiran data barang berdasarkan kategori tertentu.  
+
+**Pencatatan Barang Masuk dan Keluar**  
+- Sistem harus mencatat transaksi barang masuk (supplier) dan barang keluar (customer atau departemen lain).  
+- Sistem harus mendukung penginputan manual.  
+- Sistem harus memberikan laporan historis untuk semua transaksi barang masuk dan keluar.  
+
+**Monitoring dan Notifikasi**  
+- Sistem harus memberikan notifikasi untuk barang dengan stok rendah (di bawah ambang batas tertentu).  
+- Sistem harus menampilkan peringatan barang yang sudah habis.  
+
+**Pembuatan Laporan**
+- Laporan harus tersedia dalam format PDF atau Excel.  
+- Sistem harus memungkinkan pengelompokan laporan berdasarkan kategori barang, periode waktu, atau lokasi penyimpanan.
+
+ **2. Non-Functional Requirements (Kebutuhan Teknis dan Operasional)**  
+**Kinerja**  
+- Sistem harus mampu memproses dan menampilkan data stok kurang dari 2 detik.  
+- Sistem harus dapat menangani hingga 10.000 transaksi per bulan tanpa penurunan kinerja.  
+
+**Keamanan**  
+- Sistem harus menggunakan enkripsi SSL untuk komunikasi data di jaringan.  
+- Sistem harus menyimpan data login secara hashed menggunakan algoritma keamanan seperti bcrypt.  
+- Hanya pengguna yang terautentikasi yang dapat mengakses data atau melakukan perubahan.  
+
+**Ketersediaan**  
+- Sistem harus memiliki uptime minimal 99% setiap bulan.  
+- Sistem harus dapat diakses melalui web browser pada perangkat desktop dan mobile.  
+
+**Skalabilitas**  
+- Sistem harus dirancang agar dapat menangani peningkatan jumlah data barang atau transaksi tanpa memerlukan perubahan besar.  
+- Sistem harus mendukung integrasi dengan perangkat barcode scanner atau RFID jika diperlukan di masa depan.  
+
+**Kompatibilitas**  
+- Sistem harus mendukung browser modern seperti Google Chrome, Mozilla Firefox, dan Microsoft Edge.  
+- Sistem harus dapat berjalan pada server dengan konfigurasi minimum berikut:  
+  - OS: Linux atau Windows Server  
+  - Database: MySQL atau PostgreSQL  
+  - PHP: Versi 7.4 ke atas (atau framework yang relevan seperti Laravel)  
+
+**Pemulihan Bencana**  
+- Sistem harus memiliki mekanisme pencadangan otomatis untuk database setidaknya satu kali sehari.  
+- Data cadangan harus dapat dipulihkan dalam waktu kurang dari 30 menit setelah terjadi gangguan.  
+
+**Antarmuka Pengguna (UI/UX)**  
+- Sistem harus memiliki antarmuka yang intuitif dan responsif, dapat menyesuaikan dengan layar desktop dan perangkat mobile.  
+- Sistem harus mendukung multi-bahasa, terutama bahasa Inggris dan Indonesia.  
+
+**Pelatihan dan Dukungan**  
+- Manual pengguna dan pelatihan dasar harus disediakan bagi pengguna.  
+- Dukungan teknis harus tersedia selama jam kerja.  
+
+ **3. Constraints**  
+- Sistem harus diselesaikan dalam waktu 6 bulan.  
+
+##Software Requirement
+
+### Software Requirements untuk Aplikasi Inventory
+
+1. Functional Requirements
+- Manajemen Data Barang: Tambah, edit, hapus, dan cari barang.
+- Transaksi Barang: Pencatatan barang masuk dan keluar.
+- Monitoring Stok: Notifikasi untuk stok rendah dan barang yang jarang bergerak.
+- Laporan: Pembuatan laporan stok harian, mingguan, dan bulanan dalam format PDF/Excel.
+- Manajemen Pengguna: Autentikasi login dan peran pengguna (admin, staf).
+
+2. Non-Functional Requirements
+- Kinerja: Respon cepat (<2 detik) untuk pencarian dan transaksi.
+- Keamanan: Enkripsi data, autentikasi aman, dan perlindungan akses.
+- Responsivitas: Kompatibel dengan desktop dan perangkat mobile.
+- Ketersediaan: Uptime minimal 99% dengan dukungan cadangan data otomatis.
+- Kompatibilitas: Mendukung browser modern (Chrome, Firefox, Edge).
+- Skalabilitas: Siap untuk peningkatan data dan integrasi perangkat (barcode scanner, RFID).
+
+3. Teknologi Pendukung
+- Database: MySQL atau PostgreSQL.
+- Frontend: HTML, CSS, JavaScript (Bootstrap atau Vue.js/React).
+- Server: Linux/Windows dengan minimal PHP 7.4 atau Node.js 14 ke atas.
+
